@@ -1,23 +1,27 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import theme from './theme';
+import Avatar from './Avatar';
+import RepositoryItemDetails from './RepositoryItemDetails';
 
 const styles = StyleSheet.create({
-    separator: {
-      height: 10,
-    },
+  separator: {
+    height: 10,
+  },
+  container: {
+    flexDirection: 'row',
+    flexShrink: 1,
+    padding: 8,
+    backgroundColor: theme.colors.whiteText
+  },
 });
 
 const RepositoryItem = ({ item }) => {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.name}>Full name: {item.fullName}</Text>
-        <Text style={styles.description}>Description: {item.description}</Text>
-        <Text style={styles.language}>Language: {item.language}</Text>
-        <Text style={styles.stargazersCount}>Stars: {item.stargazersCount}</Text>
-        <Text style={styles.forksCount}>Forks: {item.forksCount}</Text>
-        <Text style={styles.reviewCount}>Reviews: {item.reviewCount}</Text>
-        <Text style={styles.ratingAverage}>Ratings: {item.ratingAverage}</Text>
-      </View>
-    );
+  return (
+    <View style={styles.container}>
+      <Avatar uri={item.ownerAvatarUrl}/>
+      <RepositoryItemDetails item={item} />
+    </View>
+  );
 };
 
 export default RepositoryItem;
