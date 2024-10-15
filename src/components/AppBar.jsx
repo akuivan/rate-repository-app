@@ -1,7 +1,7 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
-import theme from './theme';
-import routes from './routes';
+import theme from '../theme';
+import routes from '../utils/routes';
 import { useQuery, useApolloClient } from '@apollo/client';
 import { GET_USER } from '../graphql/queries';
 import useAuthStorage from '../hooks/useAuthStorage';

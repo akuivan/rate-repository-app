@@ -3,8 +3,8 @@ import { TextInput, View, StyleSheet, Pressable, Text } from 'react-native';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-native';
 import * as yup from 'yup';
-import theme from './theme';
-import routes from './routes';
+import theme from '../theme';
+import routes from '../utils/routes';
 import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({

@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 import SignIn from './SignIn';
 import AppBar from './AppBar';
-import theme from './theme';
-import routes from './routes';
+import theme from '../theme';
+import routes from '../utils/routes';
 
 const styles = StyleSheet.create({
   container: {
