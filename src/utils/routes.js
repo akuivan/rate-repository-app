@@ -1,7 +1,8 @@
 const routes = {
     home: '/',
     signIn: '/signin',
-    singleRepository: '/repository/:id'
+    singleRepository: '/repository/:id',
+    createReview: '/review'
   };
   
 export default routes;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Text from './Text';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   dateText: {
-    color: 'textSecondary',
+    color: theme.colors.textSecondary,
     marginTop: 2,
   },
   reviewText: {
