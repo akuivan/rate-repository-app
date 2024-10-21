@@ -21,20 +21,33 @@ export const GET_REPOSITORIES = gql`
 `;
 
 export const GET_REPOSITORY = gql`
-  query GetRepository($id: ID!) {
-  repository(id: $id) {
+  query getRepository($id: ID!) {
+    repository(id: $id) {
       id
       fullName
       description
-      language
       ownerAvatarUrl
-      stargazersCount
+      url
       forksCount
+      stargazersCount
       ratingAverage
       reviewCount
-      url
+      reviews {
+        edges {
+          node {
+            id
+            text
+            rating
+            createdAt
+            user {
+              id
+              username
+            }
+          }
+        }
+      }
+    }
   }
-}
 `;
 
 export const GET_USER = gql`
@@ -46,4 +59,3 @@ export const GET_USER = gql`
   }
 `;
 // other queries...
-

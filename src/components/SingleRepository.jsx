@@ -3,7 +3,8 @@ import { useParams } from 'react-router-native';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '../graphql/queries';
 import RepositoryItem from './RepositoryItem';
-import { View, Text } from 'react-native';
+import ReviewItem from './ReviewItem';
+import { View, Text, FlatList } from 'react-native';
 
 const SingleRepository = () => {
   const { id } = useParams();
@@ -14,10 +15,16 @@ const SingleRepository = () => {
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error: {error.message}</Text>;
 
+  const reviews = data.repository.reviews.edges.map(edge => edge.node);
+
   return (
-    <View>
-      <RepositoryItem repository={data.repository} showGithubButton={true} />
-    </View>
+    <FlatList
+      data={reviews}
+      renderItem={({ item }) => <ReviewItem review={item} />}
+      keyExtractor={({ id }) => id}
+      ListHeaderComponent={() => <RepositoryItem repository={data.repository} showGithubButton={true} />}
+      ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+    />
   );
 };
 
