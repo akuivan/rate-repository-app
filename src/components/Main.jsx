@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-native';
 import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
+import SingleRepository from './SingleRepository';
 import SignIn from './SignIn';
 import AppBar from './AppBar';
 import theme from '../theme';
@@ -10,7 +11,6 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     flexShrink: 1,
-    //padding: 2,
     backgroundColor: theme.colors.backgroundMain
   },
 });
@@ -22,6 +22,7 @@ const Main = () => {
       <Routes>
         <Route path={routes.home} element={<RepositoryList/>}/>
         <Route path={routes.signIn} element={<SignIn/>}/>
+        <Route path={routes.singleRepository} element={<SingleRepository/>} />
         <Route path="*" element={<Navigate to={routes.home} replace />} />
       </Routes>
     </View>

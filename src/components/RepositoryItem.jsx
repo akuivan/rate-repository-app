@@ -1,4 +1,5 @@
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import * as Linking from 'expo-linking';
 
 import theme from '../theme';
 import Text from './Text';
@@ -57,6 +58,19 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
     paddingHorizontal: 6,
   },
+  githubButtonContainer: {
+    marginTop: 15,
+    backgroundColor: theme.colors.primary,
+    borderRadius: 3,
+    flexGrow: 0,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  githubButtonText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
+  },
 });
 
 const CountItem = ({ label, count }) => {
@@ -70,7 +84,7 @@ const CountItem = ({ label, count }) => {
   );
 };
 
-const RepositoryItem = ({ repository }) => {
+const RepositoryItem = ({ repository, showGithubButton }) => {
   const {
     fullName,
     description,
@@ -80,7 +94,14 @@ const RepositoryItem = ({ repository }) => {
     ratingAverage,
     reviewCount,
     ownerAvatarUrl,
+    url,
   } = repository;
+
+  const openInGithub = () => {
+    if (url) {
+      Linking.openURL(url);
+    }
+  };
 
   return (
     <View testID="repositoryItem" style={styles.container}>
@@ -113,6 +134,11 @@ const RepositoryItem = ({ repository }) => {
         <CountItem count={reviewCount} label="Reviews" />
         <CountItem count={ratingAverage} label="Rating" />
       </View>
+      {showGithubButton && url && (
+        <TouchableOpacity onPress={openInGithub} style={styles.githubButtonContainer}>
+          <Text style={styles.githubButtonText}>Open in GitHub</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
