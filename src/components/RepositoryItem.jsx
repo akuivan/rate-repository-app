@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
 const CountItem = ({ label, count }) => {
   return (
     <View style={styles.countItem}>
-      <Text style={styles.countItemCount} fontWeight="bold">
+      <Text style={styles.countItemCount} fontWeight='bold'>
         {formatInThousands(count)}
       </Text>
-      <Text color="textSecondary">{label}</Text>
+      <Text color='textSecondary'>{label}</Text>
     </View>
   );
 };
@@ -104,7 +104,7 @@ const RepositoryItem = ({ repository, showGithubButton }) => {
   };
 
   return (
-    <View testID="repositoryItem" style={styles.container}>
+    <View testID='repositoryItem' style={styles.container}>
       <View style={styles.topContainer}>
         <View style={styles.avatarContainer}>
           <Image source={{ uri: ownerAvatarUrl }} style={styles.avatar} />
@@ -112,13 +112,13 @@ const RepositoryItem = ({ repository, showGithubButton }) => {
         <View style={styles.contentContainer}>
           <Text
             style={styles.nameText}
-            fontWeight="bold"
-            fontSize="subheading"
+            fontWeight='bold'
+            fontSize='subheading'
             numberOfLines={1}
           >
             {fullName}
           </Text>
-          <Text style={styles.descriptionText} color="textSecondary">
+          <Text style={styles.descriptionText} color='textSecondary'>
             {description}
           </Text>
           {language ? (
@@ -129,10 +129,10 @@ const RepositoryItem = ({ repository, showGithubButton }) => {
         </View>
       </View>
       <View style={styles.bottomContainer}>
-        <CountItem count={stargazersCount} label="Stars" />
-        <CountItem count={forksCount} label="Forks" />
-        <CountItem count={reviewCount} label="Reviews" />
-        <CountItem count={ratingAverage} label="Rating" />
+        <CountItem count={stargazersCount} label='Stars' />
+        <CountItem count={forksCount} label='Forks' />
+        <CountItem count={reviewCount} label='Reviews' />
+        <CountItem count={ratingAverage} label='Rating' />
       </View>
       {showGithubButton && url && (
         <TouchableOpacity onPress={openInGithub} style={styles.githubButtonContainer}>

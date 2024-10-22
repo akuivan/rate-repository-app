@@ -46,7 +46,10 @@ const AppBar = () => {
           {isSignedIn ? (
             <AppBarTab label='Sign Out' onPress={handleSignOut} />
           ) : (
+            <>
             <AppBarTab label='Sign In' to={routes.signIn} />
+            <AppBarTab label='Sign Up' to={routes.signUp} />
+            </>
           )}
         </View>
       </ScrollView>

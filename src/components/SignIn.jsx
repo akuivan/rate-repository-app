@@ -9,9 +9,9 @@ import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({
   container: {
-},
     backgroundColor: 'white',
     padding: 15,
+  },
   fieldContainer: {
     marginBottom: 15,
   },
@@ -31,12 +31,12 @@ const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.container}>
       <View style={styles.fieldContainer}>
-        <FormikTextInput name="username" placeholder="Username" />
+        <FormikTextInput name='username' placeholder='Username' />
       </View>
       <View style={styles.fieldContainer}>
         <FormikTextInput
-          name="password"
-          placeholder="Password"
+          name='password'
+          placeholder='Password'
           secureTextEntry
         />
       </View>

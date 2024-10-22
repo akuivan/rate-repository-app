@@ -39,22 +39,22 @@ const validationSchema = yup.object().shape({
 const CreateReviewForm = ({ onSubmit }) => (
   <View style={styles.container}>
     <View style={styles.fieldContainer}>
-      <FormikTextInput name="owner" placeholder="Repository owner name" />
+      <FormikTextInput name='owner' placeholder='Repository owner name' />
     </View>
     <View style={styles.fieldContainer}>
-      <FormikTextInput name="name" placeholder="Repository name" />
+      <FormikTextInput name='name' placeholder='Repository name' />
     </View>
     <View style={styles.fieldContainer}>
       <FormikTextInput
-        name="rating"
-        placeholder="Rating between 0 and 100"
-        keyboardType="numeric"
+        name='rating'
+        placeholder='Rating between 0 and 100'
+        keyboardType='numeric'
       />
     <View style={styles.fieldContainer}>
     </View>
       <FormikTextInput
-        name="review"
-        placeholder="Review"
+        name='review'
+        placeholder='Review'
       />
     </View>
     <Button onPress={onSubmit}>Create a review</Button>
@@ -70,7 +70,7 @@ const CreateReview = () => {
     },
     onError: (error) => {
         console.error('GraphQL error details:', error);
-        Alert.alert("Error", error.message || 'An unknown error occurred');
+        Alert.alert('Error', error.message || 'An unknown error occurred');
       },
   });
 

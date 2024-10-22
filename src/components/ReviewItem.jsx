@@ -50,7 +50,7 @@ const ReviewItem = ({ review }) => {
           <Text style={styles.ratingText}>{review.rating}</Text>
         </View>
         <View style={styles.reviewerDetails}>
-          <Text fontWeight="bold">{review.user.username}</Text>
+          <Text fontWeight='bold'>{review.user.username}</Text>
           <Text style={styles.dateText}>
             {new Date(review.createdAt).toLocaleDateString()}
           </Text>
