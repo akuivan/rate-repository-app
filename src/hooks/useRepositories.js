@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../graphql/queries';
 
-const useRepositories = (orderBy, orderDirection) => {
+const useRepositories = (orderBy, orderDirection, searchKeyword) => {
   // This is needed for lowest rated repositories, because Picker can't handle two labels with same values
   if (orderBy.includes('RATING_AVERAGE')) {
     orderBy = 'RATING_AVERAGE';
@@ -11,6 +11,7 @@ const useRepositories = (orderBy, orderDirection) => {
     variables: {
       orderBy,        
       orderDirection,
+      searchKeyword
     },
     fetchPolicy: 'cache-and-network',
   });
