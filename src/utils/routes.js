@@ -3,6 +3,7 @@ const routes = {
     signIn: '/signin',
     singleRepository: '/repository/:id',
     createReview: '/review',
+    myReviews: '/myreviews',
     signUp:'/signup',
   };
   

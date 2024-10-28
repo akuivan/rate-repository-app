@@ -41,7 +41,10 @@ const AppBar = () => {
         <View style={styles.tabContainer}>
           <AppBarTab label='Repositories' to={routes.home} />
           {isSignedIn && (
+            <>
             <AppBarTab label='Create a Review' to={routes.createReview} />
+            <AppBarTab label='My reviews' to={routes.myReviews} />
+            </>
           )}
           {isSignedIn ? (
             <AppBarTab label='Sign Out' onPress={handleSignOut} />
